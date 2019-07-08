@@ -1,4 +1,4 @@
-import Reactotrom from 'react-native';
+import Reactotrom from 'reactotron-react-native';
 
 if (__DEV__) {
   const tron = Reactotrom.configure()
