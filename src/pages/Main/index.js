@@ -3,7 +3,19 @@ import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../service/api';
 
-import { Container, Form, Input, SubmitButton  } from './style';
+import {
+  Container,
+  Form,
+  Input,
+  SubmitButton,
+  List,
+  User,
+  Avatar,
+  Name,
+  Bio,
+  ProfileButton,
+  ProfileButtonText,
+} from './style';
 
 export default class Main extends Component {
   state = {
@@ -30,7 +42,7 @@ export default class Main extends Component {
     Keyboard.dismiss();
   };
 
-  render(){
+  render() {
     const { users, newUser } = this.state;
     return (
       <Container>
@@ -48,11 +60,24 @@ export default class Main extends Component {
             <Icon name="add" size={20} color="#fff" />
           </SubmitButton>
         </Form>
+        <List
+          data={users}
+          keyExtractor={user => user.login}
+          renderItem={({ item }) => (
+            <User>
+              <Avatar srouce={{ uri: item.avatar }} />
+              <Name>{item.name}</Name>
+              <Bio>{item.bio}</Bio>
+              <ProfileButton onPress={() => {}}>
+                <ProfileButtonText> Ver Perfil </ProfileButtonText>
+              </ProfileButton>
+            </User>
+          )}
+        />
       </Container>
     );
   }
-
-};
+}
 
 Main.navigationOptions = {
   title: 'Principal',
