@@ -25,14 +25,14 @@ export default class Main extends Component {
     loading: false,
   };
 
-  async componentDidMount(){
+  async componentDidMount() {
     const users = await AsyncStorage.getItem('users');
     if (users) {
       this.setState({ users: JSON.parse(users) });
     }
   }
 
-  async componentDidUpdate(_, prevState){
+  async componentDidUpdate(_, prevState) {
     const { users } = this.state;
     if (prevState.user !== users) {
       AsyncStorage.setItem('users', JSON.stringify(users));
@@ -61,10 +61,10 @@ export default class Main extends Component {
     Keyboard.dismiss();
   };
 
-  handleNavigate = (user) => {
+  handleNavigate = user => {
     const { navigation } = this.props;
     navigation.navigate('User', { user });
-  }
+  };
 
   render() {
     const { users, newUser, loading } = this.state;
