@@ -93,7 +93,7 @@ export default class Main extends Component {
           keyExtractor={user => user.login}
           renderItem={({ item }) => (
             <User>
-              <Avatar srouce={{ uri: item.avatar }} />
+              <Avatar source={{ uri: item.avatar }} />
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>
               <ProfileButton onPress={() => this.handleNavigate(item)}>
@@ -108,5 +108,5 @@ export default class Main extends Component {
 }
 
 Main.navigationOptions = {
-  title: 'Principal',
+  title: 'Gihp',
 };
