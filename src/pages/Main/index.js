@@ -108,5 +108,5 @@ export default class Main extends Component {
 }
 
 Main.navigationOptions = {
-  title: 'Gihp',
+  title: 'GITHUB',
 };
